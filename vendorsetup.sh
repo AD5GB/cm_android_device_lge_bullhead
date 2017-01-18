@@ -14,4 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_bullhead-userdebug
+add_lunch_combo tesla_bullhead-userdebug
+#add_lunch_combo validus_bullhead-userdebug
