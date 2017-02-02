@@ -202,6 +202,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/gps.conf:system/etc/gps.conf
 
+# GPS
+PRODUCT_PACKAGES += \
+    libgps.utils \
+    gps.msm8992
+
 # NFC packages
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -211,7 +216,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint Sensor
 PRODUCT_PACKAGES += \
-    fingerprint.bullhead
+    fingerprint.bullhead \
+    fingerprintd
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
@@ -228,8 +234,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface2 \
     libmmjpeg_interface \
     libqomx_core \
-    mm-qcamera-app \
-    Snap
+    mm-qcamera-app 
 
 # Sensor & activity_recognition HAL
 TARGET_USES_NANOHUB_SENSORHAL := true
@@ -464,7 +469,7 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
 endif
 
-# only include verity on user builds for CM
+# only include verity on user builds for LineageOS
 ifeq ($(TARGET_BUILD_VARIANT),user)
    PRODUCT_COPY_FILES += device/lge/bullhead/fstab-verity.bullhead:root/fstab.bullhead
 
