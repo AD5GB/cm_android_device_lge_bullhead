@@ -15,4 +15,5 @@
 #
 
 #add_lunch_combo tesla_bullhead-userdebug
-add_lunch_combo validus_bullhead-userdebug
+add_lunch_combo broken_bullhead-userdebug
+#add_lunch_combo validus_bullhead-userdebug
