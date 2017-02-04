@@ -4,6 +4,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Inherit some common Tesla stuff.
 $(call inherit-product, vendor/validus/config/common_full_phone.mk)
+$(call inherit-product, vendor/validus/config/caf_fw.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/validus/config/nfc_enhanced.mk)
