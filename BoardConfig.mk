@@ -164,8 +164,9 @@ NXP_CHIP_TYPE := 2
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+## RDD Turn these off for now  -  Remove if unneeded
 # CM Hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := hardware/cyanogen/cmhw
+##BOARD_USES_CYANOGEN_HARDWARE := true
+##BOARD_HARDWARE_CLASS := hardware/cyanogen/cmhw
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk
