@@ -156,5 +156,5 @@ BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 # Use Snapdragon LLVM for Nightlies, if available
 ifeq ($(TESLA_BUILDTYPE), UNOFFICIAL)
 USE_CLANG_PLATFORM_BUILD := true
-
+endif
 -include vendor/lge/bullhead/BoardConfigVendor.mk
