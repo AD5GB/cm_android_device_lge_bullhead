@@ -164,6 +164,9 @@ NXP_CHIP_TYPE := 2
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 ## RDD Turn these off for now  -  Remove if unneeded
 # CM Hardware
 ##BOARD_USES_CYANOGEN_HARDWARE := true
