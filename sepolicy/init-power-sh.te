@@ -9,6 +9,8 @@ allow init-power-sh shell_exec:file r_file_perms;
 allow init-power-sh sysfs_devices_system_cpu:file w_file_perms;
 allow init-power-sh sysfs_performance:dir search;
 allow init-power-sh sysfs_performance:file w_file_perms;
+allow init-power-sh sysfs_power_management:dir r_dir_perms;
+allow init-power-sh sysfs_power_management:file w_file_perms;
 allow init-power-sh sysfs_thermal:dir search;
 allow init-power-sh sysfs_thermal:file w_file_perms;
 allow init-power-sh sysfs_power_management:file w_file_perms;
