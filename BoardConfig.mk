@@ -40,7 +40,7 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 
 # Custom kernel toolchain
 #KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-gnueabi-5.4/bin
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linaro-gnueabi-5.3/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linaro-gnueabi-6.3/bin
 KERNEL_TOOLCHAIN_PREFIX := arm64-eabi-
 ## TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 ## TARGET_USES_UNCOMPRESSED_KERNEL := true
