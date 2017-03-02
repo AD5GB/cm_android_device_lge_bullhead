@@ -4,10 +4,9 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Inherit some common Broken stuff.
 $(call inherit-product, vendor/broken/config/common_full_phone.mk)
-$(call inherit-product, vendor/broken/config/broken_extras.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/broken/config/nfc_enhanced.mk)
+#$(call inherit-product, vendor/broken/config/nfc_enhanced.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
