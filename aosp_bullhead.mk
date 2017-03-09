@@ -18,7 +18,7 @@
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Get the long list of APNs
-# PRODUCT_COPY_FILES := device/lge/bullhead/apns-full-conf.xml:system/etc/apns-conf.xml
+#PRODUCT_COPY_FILES := device/lge/bullhead/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -35,7 +35,10 @@ PRODUCT_MANUFACTURER := LGE
 ##PRODUCT_RESTRICT_VENDOR_FILES := false
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
-#PRODUCT_COPY_FILES += device/lge/bullhead/fstab.aosp_bullhead:root/fstab.bullhead
-
 $(call inherit-product, device/lge/bullhead/device.mk)
 $(call inherit-product-if-exists, vendor/lge/bullhead/bullhead-vendor.mk)
+
+PRODUCT_PACKAGES += \
+		Launcher3
+#PRODUCT_COPY_FILES += device/lge/bullhead/fstab.aosp_bullhead:root/fstab.bullhead
+

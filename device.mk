@@ -78,11 +78,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/synaptics_rmi4_i2c.idc:system/usr/idc/synaptics_rmi4_i2c.idc
 
-## RDD - add this 
-# MSM IRQ Balancer configuration file
-PRODUCT_COPY_FILES += \
-    device/lge/bullhead/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -140,6 +135,11 @@ PRODUCT_COPY_FILES += \
     device/lge/bullhead/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     device/lge/bullhead/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
     device/lge/bullhead/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+
+## RDD - add this 
+# MSM IRQ Balancer configuration file
+PRODUCT_COPY_FILES += \
+    device/lge/bullhead/msm_irqbalance.conf:vendor/etc/msm_irqbalance.conf
 
 # Power configuration file
 PRODUCT_COPY_FILES += \

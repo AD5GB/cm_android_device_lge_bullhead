@@ -103,7 +103,7 @@ write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
 # Switch to ROW scheduler
 write /sys/block/mmcblk0/queue/scheduler row
-write /sys/block/mmcblk0/read_ahead_kb 1024
+write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
 
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
