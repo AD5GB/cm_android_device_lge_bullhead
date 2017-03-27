@@ -44,4 +44,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="bullhead-user 7.1.1 N4F26T 3687331 release-keys"
     
        PRODUCT_BUILD_PROP_OVERRIDES += \
-DEVICE_MAINTAINERS="Josip Kelečić(DeHuMaNiZeD), Esteban Rodriguez(TJSteveMX)"
+DEVICE_MAINTAINERS="Josip Kelečić(DeHuMaNiZeD)"
