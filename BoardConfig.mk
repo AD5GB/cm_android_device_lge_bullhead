@@ -54,6 +54,11 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bullhead 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_CONFIG := bullhead_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/bullhead
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
@@ -168,9 +173,8 @@ TARGET_PER_MGR_ENABLED := true
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
-## RDD Turn these off for now  -  Remove if unneeded
-# CM Hardware
+# Use Snapdragon LLVM for Nightlies, if available
+ifeq ($(TESLA_BUILDTYPE), UNOFFICIAL)
 ##BOARD_USES_CYANOGEN_HARDWARE := true
-##BOARD_HARDWARE_CLASS := hardware/cyanogen/cmhw
-
+endif
 -include vendor/lge/bullhead/BoardConfigVendor.mk

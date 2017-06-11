@@ -279,10 +279,10 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS := \
     device/lge/bullhead/overlay
 
-## RDD - add this
 # Mobile Data provision prop
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.prov_mobiledata=false
+
 
 
 # Enable AAC 5.1 output
@@ -445,13 +445,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.tnr.preview=0 \
     persist.camera.tnr.video=0
 
-## RDD - Add this
-# Enable camera EIS            
-# eis.enable: enables electronic image stabilization           
+# Enable camera EIS		
+# eis.enable: enables electronic image stabilization		
 # is_type: sets image stabilization type
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.eis.enable=1 \
     persist.camera.is_type=4
+
 
 
 # Incoming number (b/23529711)
@@ -495,12 +495,7 @@ endif
 ifeq ($(TARGET_BUILD_VARIANT),user)
    PRODUCT_COPY_FILES += device/lge/bullhead/fstab-verity.bullhead:root/fstab.bullhead
 
-# setup dm-verity configs.
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/system
-#PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc.0/f9824900.sdhci/by-name/vendor
-$(call inherit-product, build/target/product/verity.mk)
 endif
-
 # OEM Unlock reporting
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1
@@ -522,6 +517,13 @@ endif
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# facelock properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.facelock.black_timeout=700 \
+    ro.facelock.det_timeout=2500 \
+    ro.facelock.rec_timeout=3500 \
+    ro.facelock.est_max_time=600
 
 ## RDD - add this
 # facelock properties
