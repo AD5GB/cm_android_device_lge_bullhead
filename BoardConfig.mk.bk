@@ -30,6 +30,16 @@ ENABLE_CPUSETS := true
 
 TARGET_NO_BOOTLOADER := true
 
+# Inline kernel
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_SOURCE := kernel/lge/bullhead
+TARGET_KERNEL_CONFIG := lineageos_bullhead_defconfig
+
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_USES_UNCOMPRESSED_KERNEL := true
+
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -39,14 +49,14 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bullhead 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 msm_poweroff.download_mode=0
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_CONFIG := bullhead_defconfig
-TARGET_KERNEL_SOURCE := kernel/lge/bullhead
-KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+BOARD_SUPPORTS_SOUND_TRIGGER := true
+AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -113,7 +123,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11649679360
 BOARD_CACHEIMAGE_PARTITION_SIZE := 100663296
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 
 # Build a separate vendor.img
 TARGET_COPY_OUT_VENDOR := system
@@ -150,11 +159,8 @@ NXP_CHIP_TYPE := 2
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# Enable real time lockscreen charging current values
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+# CM Hardware
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := hardware/cyanogen/cmhw
 
-# Use Snapdragon LLVM for Nightlies, if available
-ifeq ($(TESLA_BUILDTYPE), UNOFFICIAL)
-USE_CLANG_PLATFORM_BUILD := true
-endif
 -include vendor/lge/bullhead/BoardConfigVendor.mk
